@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+/*
+ * JVE theme tokens.
+ * Components should use these semantic values rather than
+ * hard-coded palette colors wherever practical.
+ */
+
+:root,
+[data-theme="dark-blue"] {
+  --color-bg: #08111f;
+  --color-surface: #101d2f;
+  --color-surface-alt: #16263b;
+  --color-header: #07101c;
+  --color-footer-bg: #0d5c9e;
+
+  --color-text: #f8fafc;
+  --color-text-muted: #9aa9bc;
+
+  --color-primary: #2387e8;
+  --color-primary-hover: #46a0f3;
+  --color-secondary: #f4ba19;
+
+  --color-border: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark-yellow"] {
+  --color-bg: #111315;
+  --color-surface: #1a1d20;
+  --color-surface-alt: #22262a;
+  --color-header: #0d0f10;
+  --color-footer-bg: var(--color-header);
+
+  --color-text: #fafafa;
+  --color-text-muted: #a9adb2;
+
+  --color-primary: #f2b705;
+  --color-primary-hover: #ffca2c;
+  --color-secondary: #327ac5;
+
+  --color-border: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="mixed-yellow"] {
+  --color-bg: #f5f3ed;
+  --color-surface: #ffffff;
+  --color-surface-alt: #ece8df;
+  --color-header: #151719;
+  --color-footer-bg: #151719;
+
+  --color-text: #191b1d;
+  --color-text-muted: #666b70;
+
+  --color-primary: #e9ad00;
+  --color-primary-hover: #f6bd1e;
+  --color-secondary: #253c55;
+
+  --color-border: rgba(20, 20, 20, 0.12);
+}
+
+[data-theme="white-yellow"] {
+  --color-bg: #f8f8f6;
+  --color-surface: #ffffff;
+  --color-surface-alt: #efefeb;
+  --color-header: #ffffff;
+  --color-footer-bg: var(--color-secondary);
+
+  --color-text: #17191b;
+  --color-text-muted: #666a6e;
+
+  --color-primary: #e7ac00;
+  --color-primary-hover: #f0b817;
+  --color-secondary: #24292f;
+
+  --color-border: rgba(20, 20, 20, 0.12);
+}
+
+[data-theme="ron-swanson"] {
+  --color-bg: #211d17;
+  --color-surface: #30291f;
+  --color-surface-alt: #3b3125;
+  --color-header: #17130f;
+  --color-footer-bg: #38291d;
+
+  --color-text: #f3ead8;
+  --color-text-muted: #b9aa94;
+
+  --color-primary: #c58b3a;
+  --color-primary-hover: #dda453;
+  --color-secondary: #7b6748;
+
+  --color-border: rgba(243, 234, 216, 0.14);
+}
+
+html {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
