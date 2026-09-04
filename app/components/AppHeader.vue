@@ -37,10 +37,10 @@ watch(() => route.fullPath, () => {
   </div>
   <header
     :class="[
-      'inset-x-0 top-0 z-50 border-b border-[var(--color-border)] text-[var(--color-header-text)] [--logo-muted:var(--color-header-muted)]',
+      'inset-x-0 top-0 z-50 border-b border-[var(--color-border)]',
       variant === 'overlay'
-        ? 'absolute'
-        : 'relative bg-[var(--color-header)]',
+        ? 'absolute text-[var(--color-overlay-header-text)] [--logo-muted:var(--color-overlay-header-muted)]'
+        : 'relative bg-[var(--color-header)] text-[var(--color-header-text)] [--logo-muted:var(--color-header-muted)]',
     ]"
   >
     <div
@@ -56,8 +56,10 @@ watch(() => route.fullPath, () => {
           v-for="item in navigation"
           :key="item.label"
           :to="item.to"
-          class="text-sm font-semibold text-[var(--color-header-muted)]
-                 transition hover:text-[var(--color-header-text)]"
+          class="text-sm font-semibold transition"
+          :class="variant === 'overlay'
+            ? 'text-[var(--color-overlay-header-muted)] hover:text-[var(--color-overlay-header-text)]'
+            : 'text-[var(--color-header-muted)] hover:text-[var(--color-header-text)]'"
         >
           {{ item.label }}
         </NuxtLink>
