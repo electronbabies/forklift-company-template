@@ -7,7 +7,5 @@
     <HomeLegacy />
     <HomeContact />
     <AppFooter />
-
-<!--    <ThemeSwitcher />-->
   </div>
 </template>

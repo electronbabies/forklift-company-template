@@ -1,19 +1,19 @@
 <script setup lang="ts">
 const contactItems = [
   {
-    label: 'Call',
-    value: '(704) 893-2878',
-    href: 'tel:+17048932878',
+    label: 'Best for',
+    value: 'Local service businesses',
+    href: '/contact',
   },
   {
-    label: 'Email',
-    value: 'Contact JV Equipment',
-    href: 'mailto:info@jvequipment.com',
+    label: 'Approach',
+    value: 'Simple, focused, credible',
+    href: '/contact',
   },
   {
-    label: 'Service',
-    value: 'Sales · Rentals · Service · Parts',
-    href: '#',
+    label: 'Next step',
+    value: 'Tell us about your website',
+    href: '/contact',
   },
 ]
 </script>
@@ -42,7 +42,7 @@ const contactItems = [
                    uppercase tracking-[0.24em] text-white/70"
           >
             <span class="h-px w-8 bg-white/70" />
-            Let’s Talk Equipment
+            Like This Website?
           </div>
 
           <h2
@@ -50,28 +50,29 @@ const contactItems = [
                    tracking-[-0.04em] text-white
                    sm:text-5xl lg:text-7xl"
           >
-            Ready to put the right
-            equipment to work?
+            Put a clear, modern site
+            to work for your business.
           </h2>
 
           <p
             class="mt-7 max-w-2xl text-lg leading-8 text-white/75"
           >
-            Talk with JV Equipment about sales, rentals, service,
-            parts, or the material handling needs of your operation.
+            This fictional brand demonstrates what a focused website can
+            do for a real local business. Your version would be built
+            around your services, customers, and identity.
           </p>
 
           <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-            <a
-              href="tel:+17048932878"
+            <NuxtLink
+              to="/contact"
               class="inline-flex w-full items-center justify-center
                      bg-white px-7 py-4 text-sm font-black
                      text-[var(--color-primary)]
                      transition hover:-translate-y-0.5
                      sm:w-auto"
             >
-              Call (704) 893-2878
-            </a>
+              Start Your Website
+            </NuxtLink>
 
             <NuxtLink
               to="/contact"
@@ -81,7 +82,7 @@ const contactItems = [
                      transition hover:bg-white/10
                      sm:w-auto"
             >
-              Request a Quote
+              View the Inquiry Page
             </NuxtLink>
           </div>
         </div>

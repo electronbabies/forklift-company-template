@@ -74,7 +74,7 @@ const categories = [
                  text-[var(--color-text-muted)] lg:justify-self-end"
         >
           From everyday warehouse workhorses to specialized material
-          handling equipment, JVE helps match the right machine to
+          handling equipment, Northline helps match the right machine to
           the job.
         </p>
       </div>
@@ -91,9 +91,10 @@ const categories = [
         <!-- Mobile / tablet -->
         <div class="lg:hidden">
           <div class="grid grid-cols-2">
-            <div
+            <NuxtLink
               v-for="brand in pairedBrands"
               :key="brand"
+              to="/equipment"
               class="flex min-h-24 items-center justify-center
                      border-b border-r border-[var(--color-border)]
                      px-5 text-center text-lg font-black
@@ -107,11 +108,12 @@ const categories = [
                      hover:text-[var(--color-text)]"
             >
               {{ brand }}
-            </div>
+            </NuxtLink>
           </div>
 
           <div class="flex justify-center">
-            <div
+            <NuxtLink
+              to="/equipment"
               class="flex min-h-24 w-1/2 items-center justify-center
                      border-x border-b border-[var(--color-border)]
                      px-5 text-center text-lg font-black
@@ -122,18 +124,19 @@ const categories = [
                      hover:text-[var(--color-text)]"
             >
               {{ finalBrand }}
-            </div>
+            </NuxtLink>
           </div>
         </div>
 
         <!-- Desktop -->
         <div class="hidden grid-cols-7 lg:grid">
-          <div
+          <NuxtLink
             v-for="brand in brands"
             :key="brand"
+            to="/equipment"
             class="flex min-h-24 items-center justify-center
                    border-y border-r border-[var(--color-border)]
-                   px-5 text-center text-lg font-black
+                   px-2 text-center text-sm font-black xl:px-5 xl:text-lg
                    tracking-[-0.02em]
                    text-[var(--color-text-muted)]
                    transition
@@ -142,7 +145,7 @@ const categories = [
                    hover:text-[var(--color-text)]"
           >
             {{ brand }}
-          </div>
+          </NuxtLink>
         </div>
       </div>
 
@@ -161,10 +164,8 @@ const categories = [
           <img
             :src="category.image"
             :alt="category.title"
-            class="absolute inset-0 size-full object-cover
-                   opacity-40 transition duration-500
-                   group-hover:scale-[1.035]
-                   group-hover:opacity-50"
+            class="equipment-card-image absolute inset-0 size-full object-cover
+                   transition duration-500 group-hover:scale-[1.035]"
           >
 
           <div

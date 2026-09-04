@@ -16,7 +16,7 @@ const equipment = [
     type: 'Electric Counterbalance',
     capacity: '5,000 lb',
     power: 'Electric',
-    image: '/images/equipment/models/bobcat-b25x7-plus.webp',
+    image: '/images/equipment/models/forklift.webp',
   },
   {
     brand: 'Bobcat',
@@ -25,7 +25,7 @@ const equipment = [
     type: 'Electric Counterbalance',
     capacity: '6,000 lb',
     power: 'Electric',
-    image: '/images/equipment/models/bobcat-b30x7-plus.webp',
+    image: '/images/equipment/models/forklift.webp',
   },
   {
     brand: 'Crown',
@@ -34,7 +34,7 @@ const equipment = [
     type: 'Counterbalance Forklift',
     capacity: 'Up to 4,000 lb',
     power: 'Electric',
-    image: '/images/equipment/models/crown-sc-series.webp',
+    image: '/images/equipment/models/forklift.webp',
   },
   {
     brand: 'Crown',
@@ -43,7 +43,7 @@ const equipment = [
     type: 'Reach Truck',
     capacity: 'Up to 4,500 lb',
     power: 'Electric',
-    image: '/images/equipment/models/crown-rr-series.webp',
+    image: '/images/equipment/models/forklift.webp',
   },
   {
     brand: 'Genie',
@@ -52,7 +52,7 @@ const equipment = [
     type: 'Scissor Lift',
     capacity: 'Varies by model',
     power: 'Electric',
-    image: '/images/equipment/models/genie-gs-series.webp',
+    image: '/images/equipment/models/forklift.webp',
   },
   {
     brand: 'PowerBoss',
@@ -61,7 +61,7 @@ const equipment = [
     type: 'Sweeper / Scrubber',
     capacity: 'Commercial',
     power: 'Multiple options',
-    image: '/images/equipment/models/powerboss-floor-care.webp',
+    image: '/images/equipment/models/forklift.webp',
   },
 ]
 
@@ -134,7 +134,7 @@ const filteredEquipment = computed(() => {
                      lg:justify-self-end"
             >
               From everyday warehouse equipment to specialized
-              material handling solutions, JV Equipment can help
+              material handling solutions, Northline can help
               match the right machine to your operation.
             </p>
           </div>
@@ -171,8 +171,8 @@ const filteredEquipment = computed(() => {
       <!-- Equipment catalog -->
       <section class="bg-[var(--color-bg)]">
         <div
-          class="mx-auto max-w-[1440px]
-                 px-6 py-16 lg:px-10 lg:py-24"
+          class="mx-auto max-w-[1800px]
+                 px-6 py-16 lg:px-12 lg:py-24 2xl:px-16"
         >
           <div
             class="mb-10 flex flex-col gap-5
@@ -211,9 +211,9 @@ const filteredEquipment = computed(() => {
               class="group grid gap-8
                      border-b border-[var(--color-border)]
                      py-10
-                     md:grid-cols-[0.95fr_1.05fr]
+                     md:grid-cols-[1.05fr_0.95fr]
                      md:items-center
-                     lg:gap-14 lg:py-12"
+                     lg:gap-16 lg:py-14"
             >
               <!-- Product image -->
               <div
@@ -223,7 +223,7 @@ const filteredEquipment = computed(() => {
                        bg-[var(--color-surface)]
                        p-6
                        sm:min-h-[260px]
-                       lg:min-h-[300px]"
+                       lg:min-h-[460px] lg:p-6"
                 :class="
                   index % 2 === 1
                     ? 'md:order-2'
@@ -251,7 +251,7 @@ const filteredEquipment = computed(() => {
                          transition duration-500
                          group-hover:scale-[1.035]
                          sm:max-h-[225px]
-                         lg:max-h-[250px]"
+                         lg:max-h-[410px]"
                 >
               </div>
 
@@ -415,7 +415,7 @@ const filteredEquipment = computed(() => {
                      text-[var(--color-text-muted)]"
             >
               Tell us about your application, environment, and
-              workload. JV Equipment can help narrow down the
+              workload. Northline can help narrow down the
               equipment that makes sense for your operation.
             </p>
           </div>
@@ -432,7 +432,7 @@ const filteredEquipment = computed(() => {
                    hover:opacity-90
                    sm:w-auto"
           >
-            Talk to JV Equipment
+            Talk to Northline
             <span class="ml-3">→</span>
           </NuxtLink>
         </div>

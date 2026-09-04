@@ -1,10 +1,9 @@
 <script setup lang="ts">
 const rentalTypes = [
   'Forklift',
-  'Warehouse Equipment',
-  'Aerial Equipment',
-  'Specialty Equipment',
-  'Not Sure',
+  'Warehouse',
+  'Aerial',
+  'Specialty',
 ]
 
 const rentalDurations = [
@@ -21,28 +20,28 @@ const rentalCategories = [
     title: 'Forklifts',
     description:
       'Electric and internal combustion equipment for everyday material handling.',
-    image: '/images/equipment/models/bobcat-b25x7-plus.webp',
+    image: '/images/equipment/models/forklift.webp',
   },
   {
     number: '02',
     title: 'Warehouse Equipment',
     description:
       'Reach trucks, pallet equipment, and narrow aisle solutions.',
-    image: '/images/equipment/models/bobcat-b25x7-plus.webp',
+    image: '/images/equipment/models/forklift.webp',
   },
   {
     number: '03',
     title: 'Aerial Equipment',
     description:
       'Equipment for elevated maintenance, installation, and project work.',
-    image: '/images/equipment/models/bobcat-b25x7-plus.webp',
+    image: '/images/equipment/models/forklift.webp',
   },
   {
     number: '04',
     title: 'Specialty Equipment',
     description:
       'Specialized equipment for jobs that need more than a standard forklift.',
-    image: '/images/equipment/models/bobcat-b25x7-plus.webp',
+    image: '/images/equipment/models/forklift.webp',
   },
 ]
 </script>
@@ -85,7 +84,7 @@ const rentalCategories = [
             <h1
               class="max-w-3xl text-5xl font-black
                      leading-[0.92] tracking-[-0.055em]
-                     sm:text-6xl lg:text-8xl"
+                     sm:text-6xl xl:text-8xl"
             >
               Need equipment?
 
@@ -99,7 +98,7 @@ const rentalCategories = [
                      text-[var(--color-text-muted)]"
             >
               Tell us what you need, how long you need it, and
-              what the job looks like. JV Equipment can help match
+              what the job looks like. Northline can help match
               the right rental equipment to the work.
             </p>
 
@@ -121,7 +120,7 @@ const rentalCategories = [
                 </div>
 
                 <div class="mt-2 font-black">
-                  Since 1976
+                  Flexible Terms
                 </div>
               </div>
 
@@ -274,7 +273,7 @@ const rentalCategories = [
                   What do you need?
                 </legend>
 
-                <div class="flex flex-wrap gap-2">
+                <div class="flex flex-wrap gap-2 xl:flex-nowrap">
                   <label
                     v-for="type in rentalTypes"
                     :key="type"
@@ -288,7 +287,7 @@ const rentalCategories = [
                     >
 
                     <span
-                      class="inline-flex border
+                      class="inline-flex whitespace-nowrap border
                              border-[var(--color-border)]
                              px-4 py-3 text-sm font-bold
                              text-[var(--color-text-muted)]
@@ -392,8 +391,8 @@ const rentalCategories = [
                bg-[var(--color-surface)]"
       >
         <div
-          class="mx-auto max-w-[1440px]
-                 px-6 py-20 lg:px-10 lg:py-24"
+          class="mx-auto max-w-[1800px]
+                 px-6 py-20 lg:px-12 lg:py-24 2xl:px-16"
         >
           <div
             class="grid gap-8
@@ -440,7 +439,7 @@ const rentalCategories = [
             <article
               v-for="category in rentalCategories"
               :key="category.number"
-              class="group relative min-h-[280px]
+              class="group relative min-h-[300px]
                      overflow-hidden
                      border-b border-r
                      border-[var(--color-border)]
@@ -449,15 +448,13 @@ const rentalCategories = [
               <img
                 :src="category.image"
                 :alt="category.title"
-                class="absolute bottom-[-5%] right-[-5%]
-                       max-h-[190px] max-w-[55%]
-                       object-contain opacity-20
-                       transition duration-500
-                       group-hover:scale-[1.04]
-                       group-hover:opacity-30"
+                class="rental-card-image absolute bottom-0 right-[4%]
+                       hidden max-h-[260px] max-w-[48%]
+                       object-contain transition duration-500
+                       group-hover:scale-[1.04] 2xl:block"
               >
 
-              <div class="relative z-10 max-w-sm">
+              <div class="relative z-10 2xl:max-w-[46%]">
                 <div
                   class="text-xs font-black
                          text-[var(--color-primary)]"
@@ -522,8 +519,8 @@ const rentalCategories = [
             </p>
           </div>
 
-          <a
-            href="tel:+17048932878"
+          <NuxtLink
+            to="/contact"
             class="inline-flex w-full
                    items-center justify-center
                    border border-[var(--color-border)]
@@ -532,8 +529,8 @@ const rentalCategories = [
                    hover:border-[var(--color-primary)]
                    sm:w-auto"
           >
-            Call (704) 893-2878
-          </a>
+            Request a Rental
+          </NuxtLink>
         </div>
       </section>
     </main>

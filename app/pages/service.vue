@@ -28,11 +28,9 @@ const serviceTypes = [
 
 const equipmentTypes = [
   'Forklift',
-  'Warehouse Equipment',
-  'Aerial Equipment',
+  'Warehouse',
+  'Aerial',
   'Floor Care',
-  'Other',
-  'Not Sure',
 ]
 
 const urgencyOptions = [
@@ -81,7 +79,7 @@ const urgencyOptions = [
             <h1
               class="max-w-3xl text-5xl font-black
                      leading-[0.92] tracking-[-0.055em]
-                     sm:text-6xl lg:text-8xl"
+                     sm:text-6xl xl:text-8xl"
             >
               Keep your equipment
 
@@ -103,7 +101,7 @@ const urgencyOptions = [
                      sm:flex-row"
             >
               <a
-                href="tel:+19563830777"
+                href="#service-request"
                 class="inline-flex w-full items-center
                        justify-center
                        bg-[var(--color-primary)]
@@ -150,7 +148,7 @@ const urgencyOptions = [
                 </div>
 
                 <div class="mt-2 font-black">
-                  Since 1976
+                  Field Ready
                 </div>
               </div>
 
@@ -304,7 +302,7 @@ const urgencyOptions = [
                   Equipment
                 </legend>
 
-                <div class="flex flex-wrap gap-2">
+                <div class="flex flex-wrap gap-2 xl:flex-nowrap">
                   <label
                     v-for="type in equipmentTypes"
                     :key="type"
@@ -318,7 +316,7 @@ const urgencyOptions = [
                     >
 
                     <span
-                      class="inline-flex border
+                      class="inline-flex whitespace-nowrap border
                              border-[var(--color-border)]
                              px-4 py-3 text-sm font-bold
                              text-[var(--color-text-muted)]
@@ -476,7 +474,7 @@ const urgencyOptions = [
                      lg:justify-self-end"
             >
               From routine maintenance to unexpected downtime,
-              JV Equipment helps keep equipment productive.
+              Northline helps keep equipment productive.
             </p>
           </div>
 
@@ -527,7 +525,7 @@ const urgencyOptions = [
                  lg:items-center
                  lg:px-10 lg:py-24"
         >
-          <!-- Placeholder for real JV technician photo -->
+          <!-- Placeholder for future technician photography -->
           <div
             class="relative min-h-[360px]
                    overflow-hidden
@@ -541,7 +539,7 @@ const urgencyOptions = [
                      tracking-[0.18em]
                      text-[var(--color-text-muted)]"
             >
-              JV Equipment technician photo
+              Service technician photography
             </div>
           </div>
 
@@ -560,15 +558,15 @@ const urgencyOptions = [
                      tracking-[-0.04em]
                      lg:text-5xl"
             >
-              Service backed by
-              50 years in material handling.
+              Service built around
+              keeping work in motion.
             </h2>
 
             <p
               class="mt-5 max-w-2xl leading-7
                      text-[var(--color-text-muted)]"
             >
-              JV Equipment supports customers with equipment
+              Northline supports customers with equipment
               knowledge, service experience, and the parts needed
               to help keep operations moving.
             </p>
@@ -578,7 +576,7 @@ const urgencyOptions = [
                      sm:flex-row"
             >
               <a
-                href="tel:+19563830777"
+                href="#service-request"
                 class="inline-flex w-full
                        items-center justify-center
                        bg-[var(--color-primary)]

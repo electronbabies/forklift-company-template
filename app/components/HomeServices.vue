@@ -80,22 +80,19 @@ const services = [
           v-for="service in services"
           :key="service.title"
           :to="service.to"
-          class="group relative min-h-[360px] overflow-hidden
+          class="group relative min-h-[420px] overflow-hidden
                  border border-[var(--color-border)]
-                 bg-[var(--color-bg)]"
+                 bg-[var(--color-bg)] sm:min-h-[360px]"
         >
           <img
             :src="service.image"
             :alt="service.title"
-            class="absolute inset-0 size-full object-cover
-                   opacity-55 transition duration-500
-                   group-hover:scale-[1.03] group-hover:opacity-65"
+            class="service-card-image absolute inset-0 size-full object-cover
+                   transition duration-500 group-hover:scale-[1.03]"
           >
 
           <div
-            class="absolute inset-0
-                   bg-gradient-to-t from-[var(--color-bg)]
-                   via-[var(--color-bg)]/55 to-transparent"
+            class="service-card-overlay absolute inset-0"
           />
 
           <div
@@ -110,7 +107,7 @@ const services = [
               {{ service.eyebrow }}
             </div>
 
-            <div class="flex items-end justify-between gap-8">
+            <div class="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-end sm:gap-8">
               <div>
                 <h3
                   class="text-3xl font-black tracking-[-0.03em]

@@ -25,7 +25,7 @@
         >
           <span class="h-px w-8 bg-[var(--color-primary)]" />
 
-          Material Handling Since 1976
+          A Modern Equipment Partner
         </div>
 
         <h1
@@ -43,8 +43,8 @@
           class="mt-8 max-w-xl text-lg leading-8
                  text-[var(--color-text-muted)] lg:text-xl"
         >
-          Forklift sales, rentals, service, parts, and material
-          handling solutions backed by five decades of experience.
+          A fictional equipment dealer with a clear, credible website
+          built to turn local searches into real customer conversations.
         </p>
 
         <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
@@ -73,24 +73,24 @@
         </div>
 
         <div
-          class="mt-14 grid max-w-xl grid-cols-3 border-t
-                 border-[var(--color-border)] pt-7"
+          class="mt-14 grid max-w-xl gap-5 border-t
+                 border-[var(--color-border)] pt-7 min-[400px]:grid-cols-3 min-[400px]:gap-0"
         >
           <div>
             <div class="text-2xl font-black">
-              50
+              24/7
             </div>
 
             <div
               class="mt-1 text-xs uppercase tracking-wider
                      text-[var(--color-text-muted)]"
             >
-              Years
+              Online
             </div>
           </div>
 
           <div
-            class="border-l border-[var(--color-border)] pl-6"
+            class="min-[400px]:border-l min-[400px]:border-[var(--color-border)] min-[400px]:pl-6"
           >
             <div class="text-sm font-bold">
               Sales + Rentals
@@ -104,7 +104,7 @@
           </div>
 
           <div
-            class="border-l border-[var(--color-border)] pl-6"
+            class="min-[400px]:border-l min-[400px]:border-[var(--color-border)] min-[400px]:pl-6"
           >
             <div class="text-sm font-bold">
               Service + Parts

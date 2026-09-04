@@ -4,9 +4,6 @@ const partTypes = [
   'Tires',
   'Battery / Charger',
   'Attachment',
-  'Accessory',
-  'Other',
-  'Not Sure',
 ]
 
 const manufacturers = [
@@ -87,7 +84,7 @@ const partsSupport = [
             <h1
               class="max-w-3xl text-5xl font-black
                      leading-[0.92] tracking-[-0.055em]
-                     sm:text-6xl lg:text-8xl"
+                     sm:text-6xl xl:text-8xl"
             >
               Get the part.
 
@@ -110,7 +107,7 @@ const partsSupport = [
                      sm:flex-row"
             >
               <a
-                href="tel:+19563830777"
+                href="#parts-request"
                 class="inline-flex w-full items-center
                        justify-center
                        bg-[var(--color-primary)]
@@ -174,7 +171,7 @@ const partsSupport = [
                 </div>
 
                 <div class="mt-2 font-black">
-                  Since 1976
+                  Expert Help
                 </div>
               </div>
             </div>
@@ -311,7 +308,7 @@ const partsSupport = [
                   What do you need?
                 </legend>
 
-                <div class="flex flex-wrap gap-2">
+                <div class="flex flex-wrap gap-2 xl:flex-nowrap">
                   <label
                     v-for="type in partTypes"
                     :key="type"
@@ -325,7 +322,7 @@ const partsSupport = [
                     >
 
                     <span
-                      class="inline-flex border
+                      class="inline-flex whitespace-nowrap border
                              border-[var(--color-border)]
                              px-4 py-3 text-sm font-bold
                              text-[var(--color-text-muted)]
@@ -575,14 +572,14 @@ const partsSupport = [
               class="mt-5 max-w-2xl leading-7
                      text-[var(--color-text-muted)]"
             >
-              Call JV Equipment with the manufacturer, model,
+              Contact Northline with the manufacturer, model,
               part number, or whatever information you have.
               We'll start there.
             </p>
           </div>
 
           <a
-            href="tel:+19563830777"
+            href="#parts-request"
             class="inline-flex w-full
                    items-center justify-center
                    border border-[var(--color-border)]

@@ -4,7 +4,7 @@
            border-[var(--color-border)]
            bg-[var(--color-surface)]"
   >
-    <!-- Background 50 -->
+    <!-- Background mark -->
     <div
       class="pointer-events-none absolute -right-8 top-1/2
              -translate-y-1/2 select-none
@@ -13,7 +13,7 @@
              text-white/[0.018]"
       aria-hidden="true"
     >
-      50
+      N
     </div>
 
     <div
@@ -34,7 +34,7 @@
                    lg:justify-start"
           >
             <span class="h-px w-8 bg-[var(--color-primary)]" />
-            Since 1976
+            Purpose-Built Online
           </div>
 
           <div
@@ -42,14 +42,14 @@
                    leading-[0.72] tracking-[-0.08em]
                    text-[var(--color-primary)]"
           >
-            50
+            01
           </div>
 
           <div
             class="mt-6 text-xl font-black uppercase
                    tracking-[0.16em]"
           >
-            Years of Experience
+            Clear Digital Presence
           </div>
         </div>
 
@@ -60,9 +60,9 @@
                    tracking-[-0.04em]
                    sm:text-5xl lg:text-6xl"
           >
-            Experience you can
+            A simple website that
             <span class="text-[var(--color-primary)]">
-              put to work.
+              gets to work.
             </span>
           </h2>
 
@@ -71,9 +71,9 @@
                    text-[var(--color-text-muted)]
                    lg:mx-0"
           >
-            Since 1976, JV Equipment has helped businesses find,
-            maintain, and support the equipment that keeps their
-            operations productive.
+            Northline is a fictional company, but the experience is
+            designed around real business goals: explain the offer,
+            establish trust, and make the next step obvious.
           </p>
 
           <p
@@ -81,10 +81,9 @@
                    text-[var(--color-text-muted)]
                    lg:mx-0"
           >
-            Five decades in material handling means understanding
-            that the right solution is about more than the machine.
-            It's about uptime, support, service, and having a team
-            you can call when you need them.
+            This demo shows how a focused website can give a local
+            service business a polished online home without unnecessary
+            complexity or a generic template feel.
           </p>
 
           <!-- Facts -->
@@ -102,7 +101,7 @@
                 class="text-2xl font-black
                        text-[var(--color-primary)]"
               >
-                1976
+                Fast
               </div>
 
               <div
@@ -110,7 +109,7 @@
                        tracking-[0.16em]
                        text-[var(--color-text-muted)]"
               >
-                Established
+                Page Loads
               </div>
             </div>
 
@@ -122,7 +121,7 @@
                 class="text-2xl font-black
                        text-[var(--color-primary)]"
               >
-                Sales + Rentals
+                Desktop + Mobile
               </div>
 
               <div
@@ -130,7 +129,7 @@
                        tracking-[0.16em]
                        text-[var(--color-text-muted)]"
               >
-                Equipment
+                Responsive
               </div>
             </div>
 
@@ -142,7 +141,7 @@
                 class="text-2xl font-black
                        text-[var(--color-primary)]"
               >
-                Service + Parts
+                Clear Actions
               </div>
 
               <div
@@ -150,7 +149,7 @@
                        tracking-[0.16em]
                        text-[var(--color-text-muted)]"
               >
-                Support
+                Customer Focused
               </div>
             </div>
           </div>
@@ -161,7 +160,7 @@
                    text-sm font-bold
                    lg:justify-start"
           >
-            About JV Equipment
+            Explore the Demo
 
             <span
               class="text-[var(--color-primary)]"
