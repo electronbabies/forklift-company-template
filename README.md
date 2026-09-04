@@ -1,75 +1,119 @@
-# Nuxt Minimal Starter
+# Forklift Company Website Template
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A responsive industrial equipment company website built with Nuxt, Vue, TypeScript, and Tailwind CSS.
 
-## Setup
+The project uses the fictional **Northline Equipment Co.** brand and demonstrates a complete marketing website for an equipment company offering sales, rentals, service, and parts.
 
-Make sure to install dependencies:
+## Highlights
+
+- Fully responsive layouts across mobile, tablet, desktop, and large displays
+- Four complete visual themes using a shared semantic design system
+- Equipment catalog and category presentation
+- Rental and service request interfaces
+- Dedicated parts, service, and company pages
+- Reusable navigation, cards, forms, headers, and footers
+- Playwright-based screenshot testing across routes, themes, and viewport sizes
+- GitHub Actions artifact-based production deployment
+
+## Themes
+
+The website includes four switchable themes:
+
+- Dark Blue
+- Dark Yellow
+- Mixed Yellow
+- Coastal Light
+
+Themes are implemented through semantic CSS variables so components remain independent of individual color palettes.
+
+## Pages
+
+- Home
+- Equipment
+- Rentals
+- Service
+- Parts
+- About
+
+## Tech Stack
+
+- Nuxt 4
+- Vue 3
+- TypeScript
+- Tailwind CSS 4
+- Playwright
+- pnpm
+- GitHub Actions
+
+## Local Development
+
+Install dependencies:
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Start the development server:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+The application will normally be available at:
 
-Build the application for production:
+```text
+http://localhost:3000
+```
+
+## Production Build
+
+Build the application:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
 pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Preview the production build locally:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
 pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Visual Testing
+
+Playwright is used to capture the website across multiple routes, themes, and viewport sizes for responsive and visual review.
+
+The screenshot test suite is located at:
+
+```text
+tests/playwright/screenshots.spec.ts
+```
+
+Run it with:
+
+```bash
+pnpm exec playwright test tests/playwright/screenshots.spec.ts
+```
+
+Generated screenshots and Playwright output are intentionally excluded from source control.
+
+## Deployment
+
+Production builds are created by GitHub Actions rather than directly on the application server.
+
+The deployment workflow:
+
+1. Installs dependencies with pnpm
+2. Builds the Nuxt application
+3. Packages the generated `.output` directory
+4. Uploads the release artifact over SSH
+5. Extracts it into a versioned release directory
+6. Updates the active release symlink
+7. Restarts the Nuxt systemd service
+8. Performs an HTTP health check
+
+This keeps deployments reproducible while avoiding application builds directly on the production server.
+
+## Purpose
+
+This repository is a portfolio and demonstration project focused on traditional business website development, responsive design, reusable theming, browser automation, and production-oriented deployment practices.

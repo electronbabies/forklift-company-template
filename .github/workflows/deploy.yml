@@ -52,7 +52,8 @@ jobs:
           PROD_HOST: ${{ secrets.PROD_HOST }}
           PROD_USER: ${{ secrets.PROD_USER }}
         run: |
-          scp release.tar.gz "$PROD_USER@$PROD_HOST:/tmp/jve-${GITHUB_SHA}.tar.gz"
+          scp release.tar.gz \
+            "$PROD_USER@$PROD_HOST:/tmp/forklift-company-template-${GITHUB_SHA}.tar.gz"
 
       - name: Deploy release
         env:
@@ -62,20 +63,27 @@ jobs:
           ssh "$PROD_USER@$PROD_HOST" "
             set -e
 
-            RELEASE=/srv/jve/releases/${GITHUB_SHA}
-            PREVIOUS=\$(readlink -f /srv/jve/current || true)
+            RELEASE=/srv/forklift-company-template/releases/${GITHUB_SHA}
+            PREVIOUS=\$(readlink -f /srv/forklift-company-template/current || true)
 
             mkdir -p \"\$RELEASE\"
-            tar -xzf /tmp/jve-${GITHUB_SHA}.tar.gz -C \"\$RELEASE\"
-            rm /tmp/jve-${GITHUB_SHA}.tar.gz
+            tar -xzf \
+              /tmp/forklift-company-template-${GITHUB_SHA}.tar.gz \
+              -C \"\$RELEASE\"
 
-            ln -sfn \"\$RELEASE\" /srv/jve/current
+            rm /tmp/forklift-company-template-${GITHUB_SHA}.tar.gz
 
-            if ! sudo /usr/bin/systemctl restart jve.service; then
+            ln -sfn \"\$RELEASE\" \
+              /srv/forklift-company-template/current
+
+            if ! sudo /usr/bin/systemctl restart forklift-company-template.service; then
               if [ -n \"\$PREVIOUS\" ]; then
-                ln -sfn \"\$PREVIOUS\" /srv/jve/current
-                sudo /usr/bin/systemctl restart jve.service
+                ln -sfn \"\$PREVIOUS\" \
+                  /srv/forklift-company-template/current
+
+                sudo /usr/bin/systemctl restart forklift-company-template.service
               fi
+
               exit 1
             fi
           "
@@ -83,7 +91,11 @@ jobs:
       - name: Health check
         run: |
           for attempt in {1..10}; do
-            if curl --fail --silent --show-error https://jve.sugacoded.app/ > /dev/null; then
+            if curl \
+              --fail \
+              --silent \
+              --show-error \
+              https://forklift.sugacoded.app/ > /dev/null; then
               exit 0
             fi
 
