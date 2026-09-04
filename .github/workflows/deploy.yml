@@ -1,0 +1,93 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.9.0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - name: Package artifact
+        run: tar -czf release.tar.gz .output
+
+      - name: Configure SSH
+        env:
+          SSH_KEY: ${{ secrets.PROD_SSH_KEY }}
+          PROD_HOST: ${{ secrets.PROD_HOST }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "$PROD_HOST" >> ~/.ssh/known_hosts
+
+      - name: Upload artifact
+        env:
+          PROD_HOST: ${{ secrets.PROD_HOST }}
+          PROD_USER: ${{ secrets.PROD_USER }}
+        run: |
+          scp release.tar.gz "$PROD_USER@$PROD_HOST:/tmp/jve-${GITHUB_SHA}.tar.gz"
+
+      - name: Deploy release
+        env:
+          PROD_HOST: ${{ secrets.PROD_HOST }}
+          PROD_USER: ${{ secrets.PROD_USER }}
+        run: |
+          ssh "$PROD_USER@$PROD_HOST" "
+            set -e
+
+            RELEASE=/srv/jve/releases/${GITHUB_SHA}
+            PREVIOUS=\$(readlink -f /srv/jve/current || true)
+
+            mkdir -p \"\$RELEASE\"
+            tar -xzf /tmp/jve-${GITHUB_SHA}.tar.gz -C \"\$RELEASE\"
+            rm /tmp/jve-${GITHUB_SHA}.tar.gz
+
+            ln -sfn \"\$RELEASE\" /srv/jve/current
+
+            if ! sudo /usr/bin/systemctl restart jve.service; then
+              if [ -n \"\$PREVIOUS\" ]; then
+                ln -sfn \"\$PREVIOUS\" /srv/jve/current
+                sudo /usr/bin/systemctl restart jve.service
+              fi
+              exit 1
+            fi
+          "
+
+      - name: Health check
+        run: |
+          for attempt in {1..10}; do
+            if curl --fail --silent --show-error https://jve.sugacoded.app/ > /dev/null; then
+              exit 0
+            fi
+
+            sleep 3
+          done
+
+          exit 1
