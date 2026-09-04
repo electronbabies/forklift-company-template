@@ -83,7 +83,7 @@
   --service-overlay-mid: rgba(231, 225, 213, 0.62);
 }
 
-[data-theme="white-yellow"] {
+[data-theme="coastal-light"] {
   --color-bg: #e7eff1;
   --color-surface: #f7fafb;
   --color-surface-alt: #d5e2e5;
@@ -106,28 +106,6 @@
   --service-image-opacity: 0.86;
   --service-image-hover-opacity: 0.96;
   --service-overlay-mid: rgba(231, 239, 241, 0.58);
-}
-
-[data-theme="ron-swanson"] {
-  --color-bg: #211d17;
-  --color-surface: #30291f;
-  --color-surface-alt: #3b3125;
-  --color-header: #17130f;
-  --color-footer-bg: #38291d;
-  --color-header-text: #f3ead8;
-  --color-header-muted: #b9aa94;
-  --color-footer-text: #f3ead8;
-  --color-footer-muted: #cdbda5;
-  --color-footer-accent: #dda453;
-
-  --color-text: #f3ead8;
-  --color-text-muted: #b9aa94;
-
-  --color-primary: #c58b3a;
-  --color-primary-hover: #dda453;
-  --color-secondary: #7b6748;
-
-  --color-border: rgba(243, 234, 216, 0.14);
 }
 
 html {
@@ -176,12 +154,12 @@ button,
 }
 
 [data-theme="mixed-yellow"] .equipment-card-image,
-[data-theme="white-yellow"] .equipment-card-image {
+[data-theme="coastal-light"] .equipment-card-image {
   opacity: var(--service-image-opacity);
 }
 
 [data-theme="mixed-yellow"] .group:hover .equipment-card-image,
-[data-theme="white-yellow"] .group:hover .equipment-card-image {
+[data-theme="coastal-light"] .group:hover .equipment-card-image {
   opacity: var(--service-image-hover-opacity);
 }
 
@@ -194,12 +172,12 @@ button,
 }
 
 [data-theme="mixed-yellow"] .rental-card-image,
-[data-theme="white-yellow"] .rental-card-image {
+[data-theme="coastal-light"] .rental-card-image {
   opacity: 0.28;
 }
 
 [data-theme="mixed-yellow"] .group:hover .rental-card-image,
-[data-theme="white-yellow"] .group:hover .rental-card-image {
+[data-theme="coastal-light"] .group:hover .rental-card-image {
   opacity: 0.38;
 }
 

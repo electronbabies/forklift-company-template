@@ -3,8 +3,7 @@ const themes = [
   { id: 'dark-blue', label: 'Dark Blue' },
   { id: 'dark-yellow', label: 'Dark Yellow' },
   { id: 'mixed-yellow', label: 'Mixed Yellow' },
-  { id: 'white-yellow', label: 'Coastal Light' },
-/*  { id: 'ron-swanson', label: 'Ron Swanson' }, */
+  { id: 'coastal-light', label: 'Coastal Light' },
 ]
 
 const currentTheme = ref('dark-blue')

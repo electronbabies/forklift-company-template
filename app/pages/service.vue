@@ -205,8 +205,8 @@ const urgencyOptions = [
               class="mt-8 grid gap-5"
               @submit.prevent
             >
-              <div class="grid gap-5 sm:grid-cols-2">
-                <label class="grid gap-2">
+              <div class="grid min-w-0 gap-5 sm:grid-cols-2">
+                <label class="grid min-w-0 gap-2">
                   <span
                     class="text-xs font-bold uppercase
                            tracking-[0.14em]"
@@ -218,7 +218,7 @@ const urgencyOptions = [
                     type="text"
                     name="name"
                     autocomplete="name"
-                    class="min-h-12 border
+                    class="min-h-12 w-full min-w-0 border
                            border-[var(--color-border)]
                            bg-[var(--color-bg)]
                            px-4 text-[var(--color-text)]
@@ -227,7 +227,7 @@ const urgencyOptions = [
                   >
                 </label>
 
-                <label class="grid gap-2">
+                <label class="grid min-w-0 gap-2">
                   <span
                     class="text-xs font-bold uppercase
                            tracking-[0.14em]"
@@ -239,7 +239,7 @@ const urgencyOptions = [
                     type="text"
                     name="company"
                     autocomplete="organization"
-                    class="min-h-12 border
+                    class="min-h-12 w-full min-w-0 border
                            border-[var(--color-border)]
                            bg-[var(--color-bg)]
                            px-4 text-[var(--color-text)]
@@ -249,8 +249,8 @@ const urgencyOptions = [
                 </label>
               </div>
 
-              <div class="grid gap-5 sm:grid-cols-2">
-                <label class="grid gap-2">
+              <div class="grid min-w-0 gap-5 sm:grid-cols-2">
+                <label class="grid min-w-0 gap-2">
                   <span
                     class="text-xs font-bold uppercase
                            tracking-[0.14em]"
@@ -262,7 +262,7 @@ const urgencyOptions = [
                     type="tel"
                     name="phone"
                     autocomplete="tel"
-                    class="min-h-12 border
+                    class="min-h-12 w-full min-w-0 border
                            border-[var(--color-border)]
                            bg-[var(--color-bg)]
                            px-4 text-[var(--color-text)]
@@ -271,7 +271,7 @@ const urgencyOptions = [
                   >
                 </label>
 
-                <label class="grid gap-2">
+                <label class="grid min-w-0 gap-2">
                   <span
                     class="text-xs font-bold uppercase
                            tracking-[0.14em]"
@@ -283,7 +283,7 @@ const urgencyOptions = [
                     type="email"
                     name="email"
                     autocomplete="email"
-                    class="min-h-12 border
+                    class="min-h-12 w-full min-w-0 border
                            border-[var(--color-border)]
                            bg-[var(--color-bg)]
                            px-4 text-[var(--color-text)]
@@ -371,7 +371,7 @@ const urgencyOptions = [
                 </div>
               </fieldset>
 
-              <label class="grid gap-2">
+              <label class="grid min-w-0 gap-2">
                 <span
                   class="text-xs font-bold uppercase
                          tracking-[0.14em]"
@@ -383,7 +383,7 @@ const urgencyOptions = [
                   type="text"
                   name="equipment"
                   placeholder="If known"
-                  class="min-h-12 border
+                  class="min-h-12 w-full min-w-0 border
                          border-[var(--color-border)]
                          bg-[var(--color-bg)]
                          px-4 text-[var(--color-text)]
@@ -393,7 +393,7 @@ const urgencyOptions = [
                 >
               </label>
 
-              <label class="grid gap-2">
+              <label class="grid min-w-0 gap-2">
                 <span
                   class="text-xs font-bold uppercase
                          tracking-[0.14em]"
@@ -405,7 +405,8 @@ const urgencyOptions = [
                   name="details"
                   rows="5"
                   placeholder="Describe the issue, maintenance needed, error message, or anything else that would help."
-                  class="border border-[var(--color-border)]
+                  class="w-full min-w-0 border
+                         border-[var(--color-border)]
                          bg-[var(--color-bg)]
                          px-4 py-3 text-[var(--color-text)]
                          outline-none transition
@@ -516,31 +517,24 @@ const urgencyOptions = [
         </div>
       </section>
 
-      <!-- Real company / trust section -->
+      <!-- Trust section -->
       <section class="bg-[var(--color-bg)]">
         <div
           class="mx-auto grid max-w-[1440px]
-                 gap-12 px-6 py-20
+                 gap-8 px-6 py-16
                  lg:grid-cols-[1fr_1fr]
                  lg:items-center
-                 lg:px-10 lg:py-24"
+                 lg:gap-12 lg:px-10 lg:py-20"
         >
-          <!-- Placeholder for future technician photography -->
           <div
-            class="relative min-h-[360px]
-                   overflow-hidden
-                   bg-[var(--color-surface)]"
+            class="overflow-hidden bg-[var(--color-surface)]
+                   lg:min-h-[360px]"
           >
-            <div
-              class="absolute inset-0
-                     flex items-center justify-center
-                     px-8 text-center
-                     text-sm font-bold uppercase
-                     tracking-[0.18em]
-                     text-[var(--color-text-muted)]"
+            <img
+              src="/images/services/technician.jpg"
+              alt="Service technician inspecting industrial equipment"
+              class="h-auto w-full"
             >
-              Service technician photography
-            </div>
           </div>
 
           <div>
